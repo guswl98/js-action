@@ -1,4 +1,11 @@
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      whoToGreet:
+        description: "Who to greet"
+        required: true
+        default: "World"
+        type: string
 
 jobs:
   hello_world_job:
@@ -9,7 +16,7 @@ jobs:
         id: hello
         uses: guswl98/js-action@v1.1
         with:
-          who-to-greet: "Someone"
+          who-to-greet: ${{inputs.whoToGreet}}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
