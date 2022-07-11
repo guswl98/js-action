@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ../
+        uses: ../../action.yml
         with:
           who-to-greet: ${{inputs.whoToGreet}}
       # Use the output from the `hello` step
