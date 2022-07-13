@@ -24,4 +24,4 @@ jobs:
         id: date
         run: |
           echo "::set-output name=date::$(date +'%Y-%m-%d')"
-          echo "$(date +'%Y-%m-%d')"
+          echo "$(date +'%s%N')"
