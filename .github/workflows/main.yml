@@ -23,4 +23,3 @@ jobs:
       - name: Get current date
         id: date
         run: echo "${new Date().getTime()}"
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
