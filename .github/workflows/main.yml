@@ -15,9 +15,13 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ../../action.yml
+        uses: guswl98/js-action@v1.1
         with:
           who-to-greet: ${{inputs.whoToGreet}}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+        
+    - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
